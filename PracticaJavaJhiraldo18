@@ -1,0 +1,65 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package PracticaJavaJhiraldo18;
+
+/**
+ *
+ * @author User
+ */
+
+
+
+import java.util.Scanner;
+
+public class Empresa {
+
+    public static void main(String[] args) {
+
+        Scanner lectura = new Scanner (System.in);
+        int opcion;
+
+        System.out.println("+++++++++++++++++++++++++++++++++++++++");
+        System.out.println("Selecciona una opción:");
+          System.out.println("1. Empleado");
+          System.out.println("2. Cliente");
+          System.out.println("+++++++++++++++++++++++++++++++++++++++");
+          opcion= lectura.nextInt();
+
+            if(opcion==1){
+                Empleado empleado = new Empleado("felix",25,"Ricardo",1234);
+
+                System.out.println("Seleccione una opción: ");
+                System.out.println("1. Solicitar un permiso");
+                System.out.println("2. Reportar horas extras");
+                int opcionEmpleado = lectura.nextInt();
+
+                if(opcionEmpleado == 1){
+                    empleado.solicitudPermiso();
+                }
+                else if(opcionEmpleado == 2){
+                    empleado.ReporteHorasExtra();
+                }
+            }
+       else if(opcion==2){
+                Cliente cliente = new Cliente("Kendra",2,"Carolina",5678);
+
+                System.out.println("Seleciones una opción");
+                System.out.println("1. Contactar representante");
+                System.out.println("2. Solicitar Información");
+                int opcionCliente = lectura.nextInt();
+
+                if(opcionCliente == 1){
+                    cliente.ContactarRepresentante();
+                }
+                else if(opcionCliente == 2){
+                    cliente.SolicitarInoformación();
+                }
+
+            }
+
+    }
+
+}
